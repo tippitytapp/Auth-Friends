@@ -20,7 +20,7 @@ function Login(){
                     id="username"
                     name="username"
                     placeholder="username"
-                    value=""
+                    value={credentials.username}
                     onChange={handleChange}
                 />
                 <label htmlFor="password">Password:</label>
@@ -29,7 +29,7 @@ function Login(){
                     id="password"
                     name="password"
                     placeholder="password"
-                    value=""
+                    value={credentials.password}
                     onChange={handleChange}
                 />
                 <button className="submit">Login</button>
