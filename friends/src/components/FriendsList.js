@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
 import Friend from "./Friend";
 import AddFriendForm from './AddFriendForm';
-import {Route, Link} from 'react-router-dom'
+import {Route, Link} from 'react-router-dom';
+import ProtectedRoute from './ProtectedRoute';
 
 class FriendsList extends React.Component{
 state={
@@ -30,7 +31,7 @@ render(){
         <div className="friendslist">
             <h2>Friends Info</h2>            
             <Link to="/friends/add"><button className="add">Add Yourself</button></Link>
-            <Route exact path="/friends/add"><AddFriendForm friends={this.state.friends}/></Route>
+            <ProtectedRoute exact path="/friends/add" component={AddFriendForm}/>
             <Friend friends={this.state.friends} />
 
         </div>
