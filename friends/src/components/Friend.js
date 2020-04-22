@@ -1,28 +1,16 @@
 import React from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth'
+import FriendCard from './FriendCard'
 
 function Friend (props){
 
-    console.log(props)
+    console.log(props.id)
     return(
         <div className="friend">
             {props.friends.map((item)=> {
-                const removeFriend = id =>{
-                    axiosWithAuth()
-                    .delete(`/api/friends/:${id}`)
-                    .then(res => {
-                        console.log(res)
-                    })
-                    .catch(err => {
-                        console.log(err)
-                    })
-                }
                 return(
                     <div className="ind-friend">
-                    <h3>{item.name}</h3>
-                    <h4>{item.age}</h4>
-                    <h5>{item.email}</h5>
-                    <button onClick={removeFriend(`${item.id}`)}>{item.id}</button>
+                    <FriendCard key={item.id} name={item.name} age={item.age} email={item.email} />
                     </div>
                 )
             })}

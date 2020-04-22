@@ -29,10 +29,9 @@ getFriends=()=>{
 render(){
     return(
         <div className="friendslist">
-            <h2>Friends Info</h2>            
-            <Link to="/friends/add"><button className="add">Add Yourself</button></Link>
-            <ProtectedRoute exact path="/friends/add" component={AddFriendForm}/>
+            <h2>Friends Info</h2>         
             <Friend friends={this.state.friends} />
+            <AddFriendForm friends={this.state.friends}/>
 
         </div>
     )
