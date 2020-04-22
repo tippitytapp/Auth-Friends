@@ -36,3 +36,19 @@ button{
 img{
   margin-top:2%;
 }
+
+.friend{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-evenly;
+}
+.ind-friend{
+  border: 1px solid black;
+  border-radius: 45px;
+  width: 25%;
+  margin: 2%;
+}
+
+.add{
+  margin-top:1%
+}
